@@ -3,8 +3,14 @@ import styles from './AuthBlock.module.css'
 import { InputWrapper } from '../../../components/common/InputWrapper'
 import * as Yup from 'yup'
 import { useFormik } from 'formik'
+import { useDispatch, useSelector } from 'react-redux'
+import { login } from '../../../store/authSlice'
+import { Redirect } from 'react-router-dom'
 
 export const AuthBlock = () => {
+  const dispatch = useDispatch()
+  const { isAuth, error } = useSelector(({ auth }) => auth)
+
   const formik = useFormik({
     initialValues: { email: '', password: '' },
     validateOnChange: false,
@@ -13,12 +19,12 @@ export const AuthBlock = () => {
       email: Yup.string().email().required('Required'),
       password: Yup.string().required('Required'),
     }),
-    onSubmit: (values, { resetForm }) => {
-      
-      resetForm()
+    onSubmit: values => {
+      dispatch(login(values))
     },
   })
 
+  if (isAuth) return <Redirect to='/dashboard' />
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.heading}>ДОБРО ПОЖАЛОВАТЬ В TESTSYSTEM</h1>
@@ -30,10 +36,10 @@ export const AuthBlock = () => {
         label='Логин'
         name='email'
         type='email'
-        error={!formik.isValid}
+        error={!formik.isValid || error}
       />
 
-      {!formik.isValid && <p className={styles.error}>Неверный логин или пароль</p>}
+      {(!formik.isValid || error) && <p className={styles.error}>Неверный логин или пароль</p>}
 
       <InputWrapper
         value={formik.values.password}
@@ -42,7 +48,7 @@ export const AuthBlock = () => {
         label='Пароль'
         name='password'
         type='password'
-        error={!formik.isValid}
+        error={!formik.isValid || error}
         marginTop={'28px'}
       />
 

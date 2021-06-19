@@ -5,8 +5,8 @@ export const App = () => {
   return (
     <div>
       <Switch>
-        <Route path={['/', '/auth']} component={Auth} />
-        <Route />
+        <Route exact path={['/', '/auth']} component={Auth} />
+        {/* <Route exact path='/dashboard' component={DashBoard} /> */}
       </Switch>
     </div>
   )

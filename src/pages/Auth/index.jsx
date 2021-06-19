@@ -3,6 +3,7 @@ import styles from './Auth.module.css'
 import { Logo } from '../../components/common/Logo'
 import { AuthBlock } from './AuthBlock'
 import { useHistory } from 'react-router-dom'
+import { auth } from '../../api/auth'
 
 export const Auth = () => {
   const history = useHistory()
