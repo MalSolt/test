@@ -18,6 +18,15 @@
   margin-bottom: 40px;
 }
 
+.error {
+  margin-top: 2px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #eb5757;
+  text-align: right;
+}
+
 .formFooter {
   margin-top: 20px;
   margin-bottom: 40px;
@@ -49,6 +58,7 @@
 }
 
 .button {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
