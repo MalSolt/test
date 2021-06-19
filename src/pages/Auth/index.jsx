@@ -2,12 +2,13 @@ import React from 'react'
 import styles from './Auth.module.css'
 import { Logo } from '../../components/common/Logo'
 import { AuthBlock } from './AuthBlock'
-import { useHistory } from 'react-router-dom'
-import { auth } from '../../api/auth'
+import { Redirect } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export const Auth = () => {
-  const history = useHistory()
+  const isAuth = useSelector(({ auth }) => auth.isAuth)
 
+  if (isAuth) return <Redirect to='/dashboard' />
   return (
     <div className={styles.authPage}>
       <div className={styles.wrapper}>

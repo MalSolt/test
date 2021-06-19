@@ -5,11 +5,10 @@ import * as Yup from 'yup'
 import { useFormik } from 'formik'
 import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../../../store/authSlice'
-import { Redirect } from 'react-router-dom'
 
 export const AuthBlock = () => {
   const dispatch = useDispatch()
-  const { isAuth, error } = useSelector(({ auth }) => auth)
+  const error = useSelector(({ auth }) => auth.error)
 
   const formik = useFormik({
     initialValues: { email: '', password: '' },
@@ -24,7 +23,6 @@ export const AuthBlock = () => {
     },
   })
 
-  if (isAuth) return <Redirect to='/dashboard' />
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.heading}>ДОБРО ПОЖАЛОВАТЬ В TESTSYSTEM</h1>

@@ -10,7 +10,7 @@ const authSlice = createSlice({
       email: '',
       password: '',
     },
-    isAuth: false,
+    isAuth: true,
     error: false,
   },
   reducers: {},
