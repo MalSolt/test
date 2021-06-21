@@ -13,16 +13,16 @@ const authSlice = createSlice({
   reducers: {},
   extraReducers: {
     [login.fulfilled]: (state, action) => {
-      const { code } = action.payload
-      if (code === 403) state.error = 403
-      if (code === 200) {
-        state.isAuth = true
-        state.error = false
-      }
+      state.isAuth = true
+      state.error = false
       state.isLoading = false
     },
     [login.pending]: (state, action) => {
       state.isLoading = true
+    },
+    [login.rejected]: (state, action) => {
+      state.error = true
+      state.isLoading = false
     },
   },
 })

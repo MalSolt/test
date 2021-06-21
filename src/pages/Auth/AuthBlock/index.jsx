@@ -36,10 +36,10 @@ export const AuthBlock = () => {
             label='Логин'
             name='email'
             type='email'
-            error={error === 403}
+            error={error}
           />
 
-          {error === 403 && <p className={styles.error}>Неверный логин или пароль</p>}
+          {error && <p className={styles.error}>Неверный логин или пароль</p>}
 
           <InputWrapper
             value={formik.values.password}
@@ -48,7 +48,7 @@ export const AuthBlock = () => {
             label='Пароль'
             name='password'
             type='password'
-            error={error === 403}
+            error={error}
             marginTop={'28px'}
           />
 
