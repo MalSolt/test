@@ -6,18 +6,23 @@ export const login = createAsyncThunk('users/login', API.login)
 const authSlice = createSlice({
   name: 'columns',
   initialState: {
-    isAuth: true,
+    isAuth: false,
     error: false,
+    isLoading: false,
   },
   reducers: {},
   extraReducers: {
     [login.fulfilled]: (state, action) => {
       const { code } = action.payload
-      if (code === 403) state.error = true
+      if (code === 403) state.error = 403
       if (code === 200) {
         state.isAuth = true
         state.error = false
       }
+      state.isLoading = false
+    },
+    [login.pending]: (state, action) => {
+      state.isLoading = true
     },
   },
 })

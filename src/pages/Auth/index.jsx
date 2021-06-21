@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Auth.module.css'
-import { Logo } from '../../components/common/Logo'
+import { Logo } from '../../components/Logo'
 import { AuthBlock } from './AuthBlock'
 import { Redirect } from 'react-router-dom'
 import { useSelector } from 'react-redux'

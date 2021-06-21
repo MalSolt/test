@@ -1,0 +1,83 @@
+.header {
+  background: #ffffff;
+  font-style: normal;
+}
+
+.headerContainer {
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88px;
+  max-width: 1900px;
+  margin: 0 auto;
+}
+
+.leftBlock {
+  display: flex;
+  align-items: center;
+}
+
+.rightBlock {
+  display: flex;
+  align-items: center;
+}
+
+.minuIcon {
+  margin-right: 41px;
+}
+
+.searchInput {
+  margin-left: 20px;
+  margin-right: 35px;
+  width: 128px;
+  height: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: rgba(21, 25, 95, 0.05);
+  border-radius: 8px;
+  font-family: IBM Plex Sans;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.searchInput::placeholder {
+  color: #15195f;
+}
+
+.subdivisions {
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subdivisions span {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #15195f;
+}
+
+.nav {
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav span {
+  font-weight: 400;
+  font-size: 16px;
+  color: #15195f;
+}
+
+.bellIcon {
+  margin-left: 42px;
+  margin-right: 33px;
+}
+
+.gearIcon {
+  margin-right: 38px;
+}

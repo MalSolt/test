@@ -1,6 +1,11 @@
 export const API = {
-  login({ email, password }) {
-    if (email === 'abcxyzazbycx23@mail.ru' && password === 'abcxyzazbycx23') return { code: 200 }
-    return { code: 403 }
+  async login({ email, password }) {
+    const response = await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (email === 'abcxyzazbycx23@mail.ru' && password === 'abcxyzazbycx23') resolve({ code: 200 })
+        resolve({ code: 403 })
+      }, 1000)
+    })
+    return response
   },
 }

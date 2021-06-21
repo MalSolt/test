@@ -1,0 +1,45 @@
+.wrapper {
+  width: 265px;
+  height: 112px;
+  background: #ffffff;
+  border: 1px solid #dddde4;
+  border-top: 4px solid #eb5757;
+  border-radius: 0 0 20px 20px;
+  padding: 23px 22px 25px;
+}
+
+.header {
+  margin-bottom: 20px;
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header span {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.footer .positionCount {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #15195f;
+  margin-right: 5px;
+}
+
+.footer span {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #15195f;
+  opacity: 0.7;
+}

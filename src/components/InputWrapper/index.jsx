@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import styles from './InputWrapper.module.css'
-import eyeIcon from '../../../img/icons/eye.svg'
+import eyeIcon from '../../img/icons/eye.svg'
 import classNames from 'classnames'
 
 export const InputWrapper = ({ error, value, onChange, name, type, label, placeholder, marginBottom, marginTop }) => {
